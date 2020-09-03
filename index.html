@@ -7,9 +7,24 @@
   </head>
   <body>
     <div>
-      <img src="./images/bulb-on.png" alt="Light On!" />
-      <button>On</button>
-      <button>Off</button>
+      <img id="light-bulb" src="./images/bulb-on.png" alt="Light On!" />
+
+      <button type="button" onclick="turnTheLightOn(1)">On</button>
+      <button type="button" onclick="turnTheLightOn(0)">Off</button>
+
+      <script>
+        function turnTheLightOn(press) {
+          var lampImg;
+
+          if (press == 0) {
+            lampImg = "./images/bulb-off.png";
+          } else {
+            lampImg = "./images/bulb-on.png";
+          }
+
+          document.getElementById("light-bulb").src = lampImg;
+        }
+      </script>
 
       <h1>That's my JS lamp</h1>
       <p>Would you do me a favor? Turn off the light, please.</p>
